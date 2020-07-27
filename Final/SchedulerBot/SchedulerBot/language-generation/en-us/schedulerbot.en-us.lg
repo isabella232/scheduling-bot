@@ -1,0 +1,51 @@
+[import](common.lg)
+
+# SendActivity_Welcome()
+- Hello! I am Scheduler Bot. I can take note of appointments and remind you by text message 5 minutes before.
+- Hi There! My name is Scheduler Bot. I can take note of appointments and remind you by text message 5 minutes before.
+- Namaskar! This is the Scheduler Bot. I can take note of appointments and remind you by text message 5 minutes before.
+
+# TextInput_Prompt_vQRziR()
+- What is your name?
+- First, please give me your name.
+- Let's start with your name.
+
+
+
+# TextInput_UnrecognizedPrompt_vQRziR()
+- Sorry I don't recognize ${this.value}. Please enter your name as text greater than 5 and less than 25 characters.
+# SendActivity_wFKlub()
+- Ok ${user.name}. I will send reminders to ${user.phonenumber}.
+# TextInput_Prompt_3btfTS()
+- Thanks ${user.name}. Now, what is your ten digit US phone number?
+- Thank you ${user.name}. Now, please tell me your ten digit US phone number.
+
+# TextInput_UnrecognizedPrompt_3btfTS()
+- Please enter a valid 10 digit phone number.
+# TextInput_InvalidPrompt_3btfTS()
+- I don't recognize ${this.value} as a phone number. 
+
+# TextInput_InvalidPrompt_vQRziR()
+- Please enter a value between 5 and 25 characters.
+
+# DateTimeInput_Prompt_iGIOBe()
+- When is your appointment?
+# DateTimeInput_UnrecognizedPrompt_iGIOBe()
+- I did not understand ${this.value}.
+# DateTimeInput_InvalidPrompt_iGIOBe()
+- Please tell me a time for the appointment.
+
+# TextInput_Prompt_KTWN0e()
+- What is the event?
+- What is the title of the event?
+- What would you like to call this event?
+
+
+# SendActivity_snQoI4()
+- Ok. I will remind you at ${user.appointmenttime[0].value} to ${user.event}. Goodbye.
+
+# SendActivity_6ikbas()
+- I got an error: ${dialog.api_response.content}
+
+
+

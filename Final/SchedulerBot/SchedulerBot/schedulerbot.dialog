@@ -1,0 +1,175 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "SchedulerBot",
+      "id": "k3mHGi"
+    }
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Welcome()}"
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "vQRziR"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_vQRziR()}",
+          "property": "user.name",
+          "outputFormat": "=trim(this.value)",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_vQRziR()}",
+          "validations": [
+            "=length(this.value) > 5 && length(this.value) < 25"
+          ],
+          "invalidPrompt": "${TextInput_InvalidPrompt_vQRziR()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "3btfTS"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_3btfTS()}",
+          "property": "user.phonenumber",
+          "outputFormat": "=trim(this.value)",
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_3btfTS()}",
+          "invalidPrompt": "${TextInput_InvalidPrompt_3btfTS()}",
+          "validations": [
+            "=length(this.value) == 10"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "wFKlub"
+          },
+          "activity": "${SendActivity_wFKlub()}"
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "iGIOBe"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${DateTimeInput_Prompt_iGIOBe()}",
+          "property": "user.appointmenttime",
+          "unrecognizedPrompt": "${DateTimeInput_UnrecognizedPrompt_iGIOBe()}",
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_iGIOBe()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "KTWN0e"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_KTWN0e()}",
+          "property": "user.event"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "DZQv4z"
+          },
+          "method": "POST",
+          "url": "https://schedulebotwebapp.azurewebsites.net/SaveSchedule",
+          "body": {
+            "UserId": "${user.name}",
+            "EventDate": "${user.appointmenttime[0].value}",
+            "EventName": "${user.event}",
+            "MinutesToAlertBefore": 60,
+            "PhoneNumber": "${user.phonenumber}"
+          },
+          "resultProperty": "dialog.api_response"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "YvE5bp"
+          },
+          "condition": "dialog.api_response.statusCode == 200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "snQoI4"
+              },
+              "activity": "${SendActivity_snQoI4()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "6ikbas"
+              },
+              "activity": "${SendActivity_6ikbas()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "hGyeoT"
+          },
+          "properties": [
+            "user.name",
+            "user.phonenumber",
+            "user.appointmenttime",
+            "user.event",
+            "dialog.api_response"
+          ]
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "schedulerbot.lg"
+}
