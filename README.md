@@ -238,10 +238,10 @@ The purpose of creating a SQL database for this demo is so that you can store th
 
 8. When your deployment is complete, go to the resource. You can do this in the following steps:
 
-   ​	a. Go back to the Azure Portal home
-   ​	b. Select `Resource groups`
-   ​	c. Choose the name of your resource group that you entered in earlier (in the demo, it would be `schedulingbot`)
-   ​	d. Choose the name of your database at the bottom of your resource group's overview page (in the demo, it would be `SchedulingBotDB`)
+   a. Go back to the Azure Portal home
+   b. Select `Resource groups`
+   c. Choose the name of your resource group that you entered in earlier (in the demo, it would be `schedulingbot`)
+   d. Choose the name of your database at the bottom of your resource group's overview page (in the demo, it would be `SchedulingBotDB`)
 
 9. In the overview page of your database, you'll be able to find a heading that says, `Connection strings`. Click on the link below that (`Show database connection strings`), and it should redirect you to a different page. Once you're there, make sure to take note of the connection string in the text box, and copy it somewhere as we will need it later on. 
 
@@ -292,10 +292,8 @@ The purpose of setting up the database is so that we can create a table to hold 
 
 5. Select all of the code and press `Execute`. What this code does is create a new table for you to store all the data that comes from the Bot when a user enters in the details regarding a reminder or event.
 
-6. Press the blue refresh button towards the upper left of your screen. Once you refresh, you should be able to see that you created a table with several columns to store your all the relevant data from your Bot. It should look similar to this:
-
-      ![](Screenshots/Screenshot%20(13)_LI.jpeg)
-
+6. Press the blue refresh button towards the upper left of your screen. Once you refresh, you should be able to see that you created a table with several columns to store your all the relevant data from your Bot. 
+      
 7. Save your work to the `Scheduling Bot` folder (the master folder created at the beginning of this tutorial, which already has three sub-folders).
 
    ![](Screenshots/Screenshot%20(10).png)
