@@ -50,7 +50,7 @@ When you are all signed up for Azure, the next step is to create a few folders o
 
    `Scheduler Function (3)`
 
-   ![Screenshot (6)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (6).png)
+   ![](Screenshots/Screenshot%20(6).png)
 
 
 
@@ -72,7 +72,7 @@ Let's get started.
 
 3. Under `Name`, give your Bot a name; it can be anything you would like. In this demo, we will call it `SchedulerBot`. And under `Location`, save your Bot to the first Bot folder that we made, which is inside the master folder that we also created. For instance, in this demo, the master folder is called `Scheduling Bot`, and we will be choosing our Location to be `SchedulerBot (1)`, the first of the three main folders inside the master. The other folders in the master are for the Web App and Function that we will be creating later on in this tutorial. 
 
-   ![Screenshot (5)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (5).png)
+   ![](Screenshots/Screenshot%20(5).png)
 
 4. When redirected, if you look to the left, under `Filter Dialog`, there should be a section that says `Greeting`. Select that.
 
@@ -80,7 +80,7 @@ Let's get started.
 
 **Phase 2 - Building**
 
-<u>Greeting Message</u>
+*Greeting Message*
 
 1. You should now be able to see the page in which we'll be making the functions for our Bot. Let's start by pressing the `+` sign, and then selecting the `Send a response` option (underneath `Loop: for each item` and `Branch: if/else`). 
 
@@ -92,7 +92,7 @@ Let's get started.
    - Hey! I'm Scheduling Bot. I can take note of appointments or events and remind you by text message one hour before.
    ```
 
-<u>User Name</u>
+*User Name*
 
 1. Now, the Bot needs to prompt the user for their name. To do this, click the `+` sign at the end of the page, hover over `Ask a question` and click on `Text`. To the right of your screen, you will see a heading that says, `Prompt for text`. In the text box below this, we will enter three ways in which the Bot can ask the user for their name. When in execution, the Bot will end up randomly picking one of these three options to use in the conversation each time. In this demo, we will put in the following: 
 
@@ -128,7 +128,7 @@ Let's get started.
    - Please enter a value between 3 and 25 characters.
    ```
 
-<u>User Phone Number</u>
+*User Phone Number*
 
 1. Once the user enters their name, the Bot now needs to find out their phone number so it can send text messages to the one we provide. Click the `+` sign at the bottom of the page, hover over `Ask a question`, and select `Text`. To the right, as before, we will see that under `Prompt for text`, there is an empty textbox. Let's enter in the following:
 
@@ -162,7 +162,7 @@ Let's get started.
    The `${this.value}` will allow the Bot to respond to the user using the response they entered in the first place.
 
 
-<u>Bot Response to User Phone Number</u>
+*Bot Response to User Phone Number*
 
 1. Click the `+` sign at the end of the page and click on `Send a response`. In the text box below `Language Generation` on the right, enter the following:
 
@@ -174,7 +174,7 @@ Let's get started.
 
    Using ${user.phonenumber} will allow the Bot to send back (or echo) whichever phone number the user entered.
 
-<u>Event Date/Time</u>
+*Event Date/Time*
 
 1. Now, the Bot needs to find out when the event is scheduled for. To do this, click the `+` sign at the end of the page, hover over `Ask a question` and click on `Date or time`. To the right of your screen, you will see a heading that says, `Prompt for text`. In the text box below this, we will enter three ways in which the Bot can ask the user for the event details. In this demo, we will put in the following: 
 
@@ -196,7 +196,7 @@ Let's get started.
    - Please tell me a time for the appointment.
    ```
 
-<u>Event Name</u>
+*Event Name*
 
 1. For now, our last step is to have the Bot ask the user what the name of the event or reminder is. Click the `+` sign at the end of the page, hover over `Ask a question` and click on `Text`. In the text box below `Prompt for text`, let's enter three ways in which the Bot can ask this question:
 
@@ -218,7 +218,7 @@ A SQL Server database is composed of a variety of tables that store specific set
 
 The purpose of creating a SQL database for this demo is so that you can store the information that the user enters into the Bot so that it can be retrieved later on, and also so that reminders can send out accordingly. Let's jump into it!
 
-<u>SQL Database</u> 
+*SQL Database*
 
 1. Go to Azure Portal using the following link: [www.portal.azure.com](http://www.portal.azure.com). Log in to your account if you have not already.
 
@@ -232,7 +232,7 @@ The purpose of creating a SQL database for this demo is so that you can store th
 
 6. Leave the question regarding the SQL elastic pool as `No`. Under `Compute + storage`, select the option that says `Configure database`. Once you redirect to a different page, press on `Basic` to the upper-left of your screen. And then, select the `Apply` option at the bottom of your screen.
 
-   ![Screenshot (7)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (7).png)
+   ![](Screenshots/Screenshot%20(7).png)
 
 7. Once you finish filling out this page, press `Review + create` and then `Create`. It may take a few minutes to deploy.
 
@@ -247,7 +247,7 @@ The purpose of creating a SQL database for this demo is so that you can store th
 
 10. Once you do copy down the connection string, go back to it (the copied version). Somewhere along that line, you will see `Password={your_password}`. What you need to do is copy your password for your database and replace it with `{your_password}` in this string. Once again, make sure to save the entire connection string because you will need it soon.
 
-<u>SQL Server</u>
+*SQL Server*
 
 1. Go back to your resource group, and instead of choosing the name of your database, select your SQL server. For the demo, it's label would be `schedulingbot` as well. When redirected, you'll be able to find a heading that says, `Firewalls and virtual networks`. Click on the link below (`Show firewall settings`).
 
@@ -263,7 +263,7 @@ The purpose of setting up the database is so that we can create a table to hold 
 
 1. Open Microsoft SQL Server Management Studio (a program that you downloaded at the beginning of this tutorial). The following screen should pop up:
 
-   ![Screenshot (8)_LI](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (8)_LI.jpg)
+    ![](Screenshots/Screenshot%20(8)_LI.jpg)
 
 2. Using the connection string that you noted down before, extract the server name, login, and password. Enter those values into this pop-up. Also, change your `Authentication` to `SQL Server Authentication`.
 
@@ -294,11 +294,11 @@ The purpose of setting up the database is so that we can create a table to hold 
 
 6. Press the blue refresh button towards the upper left of your screen. Once you refresh, you should be able to see that you created a table with several columns to store your all the relevant data from your Bot. It should look similar to this:
 
-   ![Screenshot (13)_LI](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (13)_LI.jpg)
+      ![](Screenshots/Screenshot%20(13)_LI.jpeg)
 
 7. Save your work to the `Scheduling Bot` folder (the master folder created at the beginning of this tutorial, which already has three sub-folders).
 
-   ![Screenshot (10)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (10).png)
+   ![](Screenshots/Screenshot%20(10).png)
 
 8. Press `Ctrl + N` to open a new query. Enter the following code in your new query:
 
@@ -312,35 +312,34 @@ The purpose of setting up the database is so that we can create a table to hold 
 
 **Setting Up The Scheduling Bot Web App (And APIs)**  
 
-<u>Creating A New Project</u>
+*Creating A New Project*
 
 1. Now, let's go onto Visual Studio (another application that you installed during the beginning of this tutorial). Once it's opened up, select `Create a new project`. It should redirect you to a new page. There are several things we have to do here:
-   a. Select your language as `C#`.
-      	b. Change your project type to `web`.
-      	c. Choose `ASP.NET Web Application (.NET Framework)` 
+      a. Select your language as `C#`.
+      b. Change your project type to `web`.
+      c. Choose `ASP.NET Web Application (.NET Framework)` 
+   	d. Hit  `Next`.
 
-   ​	d. Hit  `Next`.
-
-   ![Screenshot (12)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (12).png)
+   ![](Screenshots/Screenshot%20(12).png)
 
 2. Now, you must name the project. In this demo, we're going to name it `SchedulingBotWebApp`. Once named, make sure to save it to the Web App folder in your master folder (The names of the folders may be different depending on what you inputted originally). If you named the folders according to what the demo described, then you should save it to the `SchedulerBotWebApp (2)` folder in `Scheduling Bot`. 
 
 
-<u>Installing Dapper</u>
+*Installing Dapper*
 
 Before we get started, we need to download a NuGet package necessary for this particular project. We will use `Dapper`, the NuGet package we that we are installing, to get the API to talk to the database, and also to convert the data retrieved from the database into a corresponding data model defined in the API.
 
 1. To do this, right click on `SchedulingBotWebApp` and click on `Manage NuGet Packages...`. Here's a visual to help: 
 
-   ![Screenshot (23)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (23).png)
+   ![](Screenshots/Screenshot%20(23).png)
 
 2. When redirected, select `Browse` and look up `Dapper`. Then click on it and follow the procedures for installation. 
 
-<u>Creating a New Class in Models</u>
+*Creating a New Class in Models*
 
 1. If you look to the right, you should see a `Solution Explorer`. Scroll down to find the `Models` folder, and right click on it. Then, hover over `Add` and select `Class...`. 
 
-   ![Screenshot (17)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (17).png)
+   ![](Screenshots/Screenshot%20(17).png)
 
    Rename the class as `Schedule` for now. 
 
@@ -358,13 +357,15 @@ Before we get started, we need to download a NuGet package necessary for this pa
 
    It should look like this: 
 
-   ![Screenshot (19)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (19).png)
+   ![](Screenshots/Screenshot%20(19).png)
 
    The code you just entered is the data structure of the table. It matches with what's in the database.  
 
-<u>Creating a New Class in Database</u>
+*Creating a New Class in Database*
 
-1. Let's create a new folder. In your `Solution Explorer`, right click on `SchedulingBotWebApp`. Then, hover over `Add` and select `New Folder`.  Name the folder `Database`. Here's a visual to help you do this: ![Screenshot (21)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (21).png)
+1. Let's create a new folder. In your `Solution Explorer`, right click on `SchedulingBotWebApp`. Then, hover over `Add` and select `New Folder`.  Name the folder `Database`. Here's a visual to help you do this: 
+
+   ![](Screenshots/Screenshot%20(21).png)
 
 2. Now, as we did before, we need to create a new class in this folder.  To do so, scroll down to find the `Database` folder, and right click on it. Then, hover over `Add` and select `Class...`. Rename the class as `Schedule`.  
 
@@ -406,13 +407,13 @@ Before we get started, we need to download a NuGet package necessary for this pa
 
 4. Once you deploy the code, you may realize that a few lines have been underlined in red, indicating some sort of issue. Hover over each line with red underlined, press the light bulb symbol, and select the first suggestion that pops up to resolve the issues. Here's a visual to guide you: 
 
-   ![Screenshot (25)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (25).png)
+   ![](Screenshots/Screenshot%20(25).png)
 
 5. Once you are done, there should no longer be any visible errors on your page. 
 
    What you just created is your data layer. It allows you to send data (by inserting a row into the table), read data, and update data in the database. We have created three methods to match those actions accordingly in the code you inserted. Your controller will end up calling this class that you created. To describe what a controller is, it is the front-end. Your Bot and your Azure Function, which we have not created yet, is what we will end up exposing your controller to.
 
-<u>Creating a New Class in Controllers</u>
+*Creating a New Class in Controllers*
 
 1. Scroll to find the `Controllers` folder, and right click on it. Then, hover over `Add` and select `Class...`. Name the class `SchedulingAPIController`. 
 
@@ -475,7 +476,7 @@ Before we get started, we need to download a NuGet package necessary for this pa
    The class we just created has three main functionalities as well: it saves the schedule, it gets schedules, and it also marks them as complete. Here you are calling the `Schedule.cs` class that you created within the database folder, which in turn calls the database using a Connection String.
 
 
-<u>Editing `Web.config`</u>
+*Editing `Web.config`*
 
 1. Go back to your `Solution Explorer`. Scroll down to find `Web.config` and click on it. 
 
@@ -490,11 +491,13 @@ Before we get started, we need to download a NuGet package necessary for this pa
    Finally, remember to save all of your work by clicking `File` and then `Save all`.
 
 
-<u>Publishing Web App To Azure</u>
+*Publishing Web App To Azure*
 
 1. Now it's time for us to publish everything to Azure. To do this, right click on `SchedulingBotWebApp`, and select `Publish... ` . When it asks, `Where are you publishing today?`, choose `Azure`. And then, when it asks, `Which Azure service would you like to use to host your application?`, select `Azure App Service (Windows)`. 
 
-2. At the bottom, you should see `Create a new Azure App Service... `. Select that. Fill out the following groups as shown below, and press `Create` when done: ![Screenshot (27)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (27).png)
+2. At the bottom, you should see `Create a new Azure App Service... `. Select that. Fill out the following groups as shown below, and press `Create` when done: 
+
+   ![](Screenshots/Screenshot%20(27).png)
 
    When the process is complete, your Azure Web App Bot should now be deployed. When you hit `Finish` and close out of the tab, also remember to select `Publish` to finalize the deployment. 
 
@@ -504,7 +507,7 @@ Before we get started, we need to download a NuGet package necessary for this pa
 
 **Composing the Bot (Stage 2)**
 
-<u>Sending An HTTP Request</u>
+*Sending An HTTP Request*
 
 1. We must now finish composing the Bot using the Bot Framework Composer. When you go back, scroll to the bottom of your screen and press the `+` symbol. Hover over `Access external resources` and select `Send an HTTP request`. 
 
@@ -526,7 +529,7 @@ Before we get started, we need to download a NuGet package necessary for this pa
 
 5. For `Result property`, enter the following: `dialog.api_response`
 
-<u>Branch: If/else</u>
+*Branch: If/else*
 
 1. Press the `+` symbol. Hover over `Create a condition` and select `Branch: If/else`. 
 
@@ -546,15 +549,15 @@ Before we get started, we need to download a NuGet package necessary for this pa
    - I got an error: ${dialog.api_response.content}
    ```
 
-<u>Delete Properties</u>
+*Delete Properties*
 
 1. Scroll to the bottom of your screen and press the `+` symbol. Hover over `Manage properties` and select `Delete properties`. 
 
 2. Enter the following properties as described in the image:
 
-   ![Screenshot (29)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (29).png) 
+   ![](Screenshots/Screenshot%20(29).png)
 
-<u>Test Bot</u>
+*Test Bot*
 
 1. In the upper right corner, select `Start Bot`. Once that loads, press `Test in Emulator`. 
 2. When redirected to the Bot Framework Emulator, test your bot to make sure it does not display any errors. 
@@ -575,33 +578,31 @@ Before we get started, we need to download a NuGet package necessary for this pa
 
 **Creating An Azure Function**
 
-<u>Creating A New Project</u>
+*Creating A New Project*
 
 1. Now, let's go onto Visual Studio. Once it's opened up, select `Create a new project`. It should redirect you to a new page. There are several things we have to do here:
-   a. Select your language as `C#`.
-      	b. Change your platform to `Azure`. Change your project type to `web`.
-
+      a. Select your language as `C#`.
+      b. Change your platform to `Azure`. Change your project type to `web`.
    ​	c. Choose `Azure Functions`. 
-
    ​	d. Hit  `Next`.
 
-   ![Screenshot (30)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (30).png)
+   ![](Screenshots/Screenshot%20(30).png)
 
 2. Now, you must name the project. In this demo, we're going to name it `SchedulingBotFunction`. Once named, make sure to save it to the Function in your master folder (The names of the folders may be different depending on what you inputted originally). If you named the folders according to what the demo described, then you should save it to the `SchedulerFunction (3)` folder in `Scheduling Bot`. 
 
-   ![Screenshot (31)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (31).png)
+   ![](Screenshots/Screenshot%20(31).png)
 
 3. Select `Timer Trigger`. Change the 5 (runs every 5 minutes) to a 1 (runs every one minute), and press `Create`. 
 
-<u>Installing Twilio</u>
+*Installing Twilio*
 
 1. Before we get started, we need to download a NuGet package necessary for this particular project. To do this, right click on `SchedulingBotWebApp` and click on `Manage NuGet Packages...`. Here's a visual to help: 
 
-   ![Screenshot (23)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (23).png)
+   ![](Screenshots/Screenshot%20(23).png)
 
 2. When redirected, select `Browse` and look up `Twilio`. Then click on it and follow the procedures for installation. 
 
-<u>Set Up</u>
+*Set Up*
 
 1. Enter the following code immediately above the line that says `log.LogInformation`. Remember to replace certain parts of your code, as listed, with your Get URL, Account SID, Auth Token, Twilio phone number, and your Update URL. For your Get URL, check Azure for your web app URL, and add `/GetSchedules` to the end of it. For your Update URL, use your web app URL, and add `/CompleteSchedule` to the end of it.
 
@@ -645,13 +646,13 @@ Before we get started, we need to download a NuGet package necessary for this pa
 
 2. Once you deploy the code, you may realize that a few lines have been underlined in red, indicating some sort of issue. Hover over each line with red underlined, press the light bulb symbol, and select the first suggestion that pops up to resolve the issues. 
 
-<u>Publishing Function To Azure</u>
+*Publishing Function To Azure*
 
 1. Now it's time for us to publish everything to Azure. To do this, right click on `SchedulingBotFunction`, and select `Publish... ` . When it asks, `Where are you publishing today?`, choose `Azure`. And then, when it asks, `Which Azure service would you like to use to host your application?`, select `Azure Function App (Windows)`. 
 
 2. At the bottom, you should see `Create a new Azure Function... `. Select that. Fill out the following groups as shown below, and press `Create` when done: 
 
-   ![Screenshot (32)](C:\Users\Meghna Jayaraj\Pictures\Screenshots\Screenshot (32).png)
+   ![](Screenshots/Screenshot%20(32).png)
 
    When the process is complete, your Azure Function should now be deployed. When you hit `Finish` and close out of the tab, also remember to select `Publish` to finalize the deployment. 
 
